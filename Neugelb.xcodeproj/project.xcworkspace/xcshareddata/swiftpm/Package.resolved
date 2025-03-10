@@ -1,0 +1,42 @@
+{
+  "originHash" : "00cf1b147a4b9d5eb0b5bbf2fcedbd17fd8bdd19f5569a5371a40f99723dce59",
+  "pins" : [
+    {
+      "identity" : "neugelb-ios-colors",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-colors",
+      "state" : {
+        "branch" : "main",
+        "revision" : "7adee7143f985e17996a6cd795b652dd16ff62ce"
+      }
+    },
+    {
+      "identity" : "neugelb-ios-fonts",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-fonts",
+      "state" : {
+        "branch" : "main",
+        "revision" : "44633613fd923bec9d6563f7834d8ee2acc2c0fc"
+      }
+    },
+    {
+      "identity" : "neugelb-ios-images",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-images",
+      "state" : {
+        "branch" : "main",
+        "revision" : "2bf148e0ab79ea25435b21058b83eeb10207e3a4"
+      }
+    },
+    {
+      "identity" : "neugelb-ios-ui-components",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-ui-components",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0893cd54e5d2996ef4655d64fea77759ebcae2e4"
+      }
+    }
+  ],
+  "version" : 3
+}
