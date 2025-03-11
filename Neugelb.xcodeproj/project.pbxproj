@@ -584,7 +584,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-ui-components";
 			requirement = {
-				branch = main;
+				branch = feature/addMovieList;
 				kind = branch;
 			};
 		};
