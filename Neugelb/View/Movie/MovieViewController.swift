@@ -2,18 +2,18 @@ import UIKit
 import SwiftUI
 import NeugelbColors
 
-class MovieListViewController: NeugelbViewContainerController<MovieListView> {
+class MovieViewController: NeugelbViewContainerController<MovieView> {
     
     override var viewBackgroundColor: UIColor {
         ColorAsset.grey80.uiColor
     }
     
-    private let viewModel: MovieListViewModel
+    private let viewModel: MovieViewModel
     
-    init(viewModel: MovieListViewModel) {
+    init(viewModel: MovieViewModel) {
         self.viewModel = viewModel
         super.init {
-            MovieListView(viewModel: viewModel)
+            MovieView(viewModel: viewModel)
         }
     }
     
@@ -21,7 +21,7 @@ class MovieListViewController: NeugelbViewContainerController<MovieListView> {
         super.viewDidLoad()
 
         Task {
-            await viewModel.getMovies()
+            //await viewModel.getPlaces()
         }
     }
 }

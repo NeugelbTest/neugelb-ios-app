@@ -1,5 +1,5 @@
 {
-  "originHash" : "00cf1b147a4b9d5eb0b5bbf2fcedbd17fd8bdd19f5569a5371a40f99723dce59",
+  "originHash" : "0e6b9f592d7792ec01b3b1ff9df3d7f06a5d196e20d18819a354c6390180cacd",
   "pins" : [
     {
       "identity" : "neugelb-ios-colors",
@@ -29,12 +29,21 @@
       }
     },
     {
+      "identity" : "neugelb-ios-network",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/NeugelbTest/neugelb-ios-network",
+      "state" : {
+        "branch" : "feature/addMovieService",
+        "revision" : "bd8b3d4b3c6e50969f055495c3f58165319bc415"
+      }
+    },
+    {
       "identity" : "neugelb-ios-ui-components",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NeugelbTest/neugelb-ios-ui-components",
       "state" : {
         "branch" : "feature/addMovieList",
-        "revision" : "03fdccf2f57fb59f871bb3af1cbd2d116db70d58"
+        "revision" : "1d9e54cbb0e1c9f0c66776959bec3bf8608bed03"
       }
     },
     {

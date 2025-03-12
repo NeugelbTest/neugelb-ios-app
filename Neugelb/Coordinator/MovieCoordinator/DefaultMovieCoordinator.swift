@@ -1,5 +1,5 @@
 import UIKit
-//import ARTNetwork
+import NeugelbNetwork
 
 class DefaultMovieCoordinator: Coordinator {
     
@@ -40,15 +40,14 @@ private extension DefaultMovieCoordinator {
 
     @MainActor
     func navigateToMovieList() async {
-        let viewModel = MovieListViewModel(repository: ARTNetwork.repository, coordinator: self)
+        let viewModel = MovieListViewModel(service: NeugelbNetwork.movieService, coordinator: self)
         let viewContoller = MovieListViewController(viewModel: viewModel)
         self.navigationController.pushViewController(viewContoller, animated: true)
     }
 
     @MainActor
     func navigateToMovie(for id: String) async {
-        
-        let viewModel = MovieViewModel(id: id, artNetwork: .shared, coordinator: self)
+        let viewModel = MovieViewModel(id: id, coordinator: self)
         let viewController = MovieViewController(viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }

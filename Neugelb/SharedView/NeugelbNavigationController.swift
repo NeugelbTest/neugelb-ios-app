@@ -91,7 +91,6 @@ final class NeugelbNavigationController: UINavigationController {
 private extension NeugelbNavigationController {
 
     func configureNavigationBar() {
-        //setJUCRFonts()
 
         if shouldForceHideNavigationBar {
             isNavigationBarHidden = true

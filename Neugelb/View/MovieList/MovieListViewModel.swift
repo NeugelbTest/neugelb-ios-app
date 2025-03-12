@@ -1,39 +1,33 @@
 import SwiftUI
-//import ARTNetwork
+import NeugelbNetwork
 import NeugelbUIComponents
 
 final class MovieListViewModel: ObservableObject {
     
-//    private var repository: ARTRepository
+    private var service: MovieService
     private var coordinator: MovieCoordinator?
-//    
-//    @MainActor @Published
-//    var places : [PlacesListItem.Model] = []
-//    
-//    init(
-//        repository : ARTRepository,
-//        coordinator: PaintingCoordinator
-//    ) {
-//        self.repository = repository
-//        self.coordinator = coordinator
-//    }
-//    
-//    func getPlaces() async {
-//        guard let allPlaces = try? await repository.fetchLocations() else { return }
-//        Task { @MainActor in
-//            print()
-//            places = allPlaces.map({ getPlacesListItemModel(from: $0) })
-//        }
-//        
-//    }
-//    
-//    func navigateBack() {
-//        coordinator?.navigate(.back)
-//    }
-//
-//    func goToPlace(id: String) {
-//        coordinator?.navigate(.place(id))
-//    }
+    
+    @MainActor @Published
+    var movies : [MovieListItem.Model] = []
+    
+    init(
+        service : MovieService,
+        coordinator: MovieCoordinator
+    ) {
+        self.service = service
+        self.coordinator = coordinator
+    }
+
+    func getMovies() async {
+        guard let movies = try? await service.fetchMovies(by: 0) else { return }
+        Task { @MainActor in
+            self.movies = movies.map({ getMovieListItemModel(from: $0) })
+        }
+    }
+
+    func goToMovie(id: String) {
+        coordinator?.navigate(.movie(id))
+    }
 
 }
 
@@ -41,16 +35,21 @@ final class MovieListViewModel: ObservableObject {
 
 private extension MovieListViewModel {
     
-//    func getPlacesListItemModel(from place: Location) -> PlacesListItem.Model {
-//        PlacesListItem.Model.Builder()
-//            .with(id: place.id)
-//            .with(name: place.name)
-//            .with(address: "\(place.country), \(place.city)")
-//            .with(imageUrl: place.image)
-//            .with(imageService: DefaultImageService())
-//            .with(detailButtonActionHandler: { [weak self] id in
-//                self?.goToPlace(id: id)
-//            })
-//            .build()
-//    }
+    func getMovieListItemModel(from movie: Movie) -> MovieListItem.Model {
+        MovieListItem.Model.Builder()
+            .with(id: "\(movie.id)")
+            .with(name: movie.name)
+            .with(imageUrl: "")
+            .with(rate: 9.5)
+            .with(genre: "Action")
+            .with(year: 2019)
+            .with(time: 139)
+            //.with(imageService: DefaultImageService())
+            .with(detailButtonActionHandler: { [weak self] id in
+                self?.goToMovie(id: id)
+            })
+            .build()
+    }
 }
+
+

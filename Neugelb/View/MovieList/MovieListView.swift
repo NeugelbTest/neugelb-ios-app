@@ -9,27 +9,22 @@ struct MovieListView: View {
     
     var body: some View {
         
-//        ARTNavigationScrollView(
-//            title: "Places",
-//            backgroundColor: .clear,
-//            backButtonStyle: .back,
-//            backButtonAction: {
-//                viewModel.navigateBack()
-//            }
-//        ) {
-//            content
-//        }
-        
-        Text("Hello, World!")
+        NeugelbNavigationListView(
+            title: "Latest Movies",
+            subtitle: "The latest movies sort by favorites",
+            backgroundColor: .clear
+        ) {
+            content
+        }
     }
     
-//    var content: some View {
-//        ScrollView {
-//            ForEach(viewModel.places) { place in
-//                PlacesListItem(model: place)
-//                    .fillWidth()
-//            }
-//            .padding(.horizontal, 16)
-//        }
-//    }
+    var content: some View {
+        ForEach(viewModel.movies) { movie in
+            MovieListItem(model: movie)
+                .padding(.horizontal, .spacing16)
+                .padding(.bottom, .spacing16)
+        }
+
+    }
+
 }
