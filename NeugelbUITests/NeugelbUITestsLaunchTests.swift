@@ -1,10 +1,3 @@
-//
-//  NeugelbUITestsLaunchTests.swift
-//  NeugelbUITests
-//
-//  Created by Matt on 09.03.25.
-//
-
 import XCTest
 
 final class NeugelbUITestsLaunchTests: XCTestCase {

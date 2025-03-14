@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C93CAB672D7E4A1000C67BD8 /* NeugelbUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = C93CAB662D7E4A1000C67BD8 /* NeugelbUIComponents */; };
+		C95826BB2D81DB49005C188F /* NeugelbNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = C95826BA2D81DB49005C188F /* NeugelbNetwork */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C95826BB2D81DB49005C188F /* NeugelbNetwork in Frameworks */,
 				C93CAB672D7E4A1000C67BD8 /* NeugelbUIComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -131,6 +133,7 @@
 			name = Neugelb;
 			packageProductDependencies = (
 				C93CAB662D7E4A1000C67BD8 /* NeugelbUIComponents */,
+				C95826BA2D81DB49005C188F /* NeugelbNetwork */,
 			);
 			productName = Neugelb;
 			productReference = C93CAB1B2D7DBFD400C67BD8 /* Neugelb.app */;
@@ -216,6 +219,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				C93CAB652D7E4A1000C67BD8 /* XCRemoteSwiftPackageReference "neugelb-ios-ui-components" */,
+				C95826B92D81DB49005C188F /* XCRemoteSwiftPackageReference "neugelb-ios-network" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C93CAB1C2D7DBFD400C67BD8 /* Products */;
@@ -584,7 +588,15 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-ui-components";
 			requirement = {
-				branch = main;
+				branch = feature/addMovieList;
+				kind = branch;
+			};
+		};
+		C95826B92D81DB49005C188F /* XCRemoteSwiftPackageReference "neugelb-ios-network" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-network";
+			requirement = {
+				branch = feature/addMovieService;
 				kind = branch;
 			};
 		};
@@ -595,6 +607,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C93CAB652D7E4A1000C67BD8 /* XCRemoteSwiftPackageReference "neugelb-ios-ui-components" */;
 			productName = NeugelbUIComponents;
+		};
+		C95826BA2D81DB49005C188F /* NeugelbNetwork */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C95826B92D81DB49005C188F /* XCRemoteSwiftPackageReference "neugelb-ios-network" */;
+			productName = NeugelbNetwork;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
