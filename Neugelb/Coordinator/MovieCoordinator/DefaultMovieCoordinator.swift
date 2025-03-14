@@ -46,9 +46,9 @@ private extension DefaultMovieCoordinator {
     }
 
     @MainActor
-    func navigateToMovie(for id: String) async {
-        let viewModel = MovieViewModel(id: id, coordinator: self)
-        let viewController = MovieViewController(viewModel: viewModel)
+    func navigateToMovie(for id: Int) async {
+        let viewModel = MovieViewModel(service: NeugelbNetwork.movieService, coordinator: self)
+        let viewController = MovieViewController(movieId: id, viewModel: viewModel)
         navigationController.pushViewController(viewController, animated: true)
     }
 

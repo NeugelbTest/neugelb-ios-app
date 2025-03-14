@@ -15,7 +15,7 @@ extension Navigation {
 
     enum Movie: NavigationProtocol {
 
-        case movie(String)
+        case movie(Int)
         case movieList
         case back
 
