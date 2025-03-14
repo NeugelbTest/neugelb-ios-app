@@ -3,17 +3,17 @@ import NeugelbNetwork
 import NeugelbUIComponents
 
 final class MovieViewModel: ObservableObject {
-    
+
     private var service: MovieService
     private var coordinator: MovieCoordinator?
     private var imageService: ImageService
 
     @MainActor @Published
     var movie: Movie?
-    
+
     @MainActor @Published
     var cover: ImageStatus = .loading
-    
+
     @MainActor @Published
     var poster: ImageStatus = .loading
 
@@ -26,7 +26,7 @@ final class MovieViewModel: ObservableObject {
         self.coordinator = coordinator
         self.imageService = imageService
     }
-    
+
     func getMovie(id: Int) async {
         guard let movie = try? await service.fetchMovieDetails(for: id) else { return }
         Task { @MainActor in
@@ -44,7 +44,7 @@ final class MovieViewModel: ObservableObject {
 // MARK: - Private Methods
 
 private extension MovieViewModel {
-    
+
     func fetchImage(image: String?) async -> ImageStatus {
         guard let path = image else {
             return .failed

@@ -2,15 +2,15 @@ import UIKit
 import NeugelbNetwork
 
 class DefaultMovieCoordinator: Coordinator {
-    
+
     var rootViewController: UIViewController
     var navigationController: UINavigationController
-    
+
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
         self.rootViewController = UIViewController()
     }
-    
+
     @MainActor
     func start() {
         navigate(.movieList)
@@ -18,7 +18,7 @@ class DefaultMovieCoordinator: Coordinator {
 }
 
 extension DefaultMovieCoordinator: MovieCoordinator {
-    
+
     func navigate(_ route: Navigation.Movie) {
         Task { @MainActor in
             switch route {
@@ -28,7 +28,7 @@ extension DefaultMovieCoordinator: MovieCoordinator {
                 await navigateToMovieList()
             case .movie(let id):
                 await navigateToMovie(for: id)
-            
+
             }
         }
     }

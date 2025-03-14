@@ -5,11 +5,11 @@ import NeugelbUIComponents
 import NeugelbLocalized
 
 struct MovieListView: View {
-    
+
     @ObservedObject var viewModel: MovieListViewModel
-    
+
     var body: some View {
-        
+
         NeugelbNavigationListView(
             title: Localizable.latestMovies,
             subtitle: Localizable.latestMoviesDescription,
@@ -18,7 +18,7 @@ struct MovieListView: View {
             content
         }
     }
-    
+
     var content: some View {
         ForEach(viewModel.movies) { movie in
             MovieListItem(model: movie)

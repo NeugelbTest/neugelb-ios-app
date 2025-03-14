@@ -6,9 +6,9 @@ import NeugelbNetwork
 import NeugelbLocalized
 
 struct MovieView: View {
-    
+
     @ObservedObject var viewModel: MovieViewModel
-    
+
     var body: some View {
         NeugelbNavigationScrollView(
             title: Localizable.movieInformation,
@@ -21,7 +21,7 @@ struct MovieView: View {
             content
         }
     }
-    
+
     var content: some View {
         VStack {
             header
@@ -38,9 +38,9 @@ struct MovieView: View {
                 adult(movie: movie)
             }
         }
-        
+
     }
-    
+
     var header: some View {
         NeugelbImageView(image: $viewModel.cover)
             .fillWidth()
@@ -56,7 +56,7 @@ struct MovieView: View {
                         )
                         .clipped()
                         .cornerRadius(16)
-                    
+
                     NeugelbText(
                         text: viewModel.movie?.title ?? Localizable.untitle,
                         weight: .semibold,
@@ -64,15 +64,15 @@ struct MovieView: View {
                         textColor: .grey10
                     )
                     .padding(.bottom, .spacing4)
-                
+
                     Spacer()
                 }
                 .padding(.horizontal, .spacing16),
                 alignment: .bottom
             )
-        
+
     }
-    
+
     @ViewBuilder
     var overview: some View {
         if let overview = viewModel.movie?.overview {
@@ -87,7 +87,7 @@ struct MovieView: View {
             .padding(.top, .spacing16)
         }
     }
-    
+
     func quickInformation(movie: Movie) -> some View {
         HStack(spacing: .spacing8) {
             NeugelbQuickInfo(
@@ -111,63 +111,63 @@ struct MovieView: View {
         }
         .padding(.top, .spacing16)
         .padding(.bottom, .spacing8)
-        
+
     }
-    
+
     @ViewBuilder
     func status(movie: Movie) -> some View {
         if let status = movie.status {
             NeugelbInfoRow(title: Localizable.status, value: "\(status)")
         }
     }
-    
+
     @ViewBuilder
     func rating(movie: Movie) -> some View {
         if let rating = movie.rating {
             NeugelbInfoRow(title: Localizable.rating, value: "\(rating)")
         }
     }
-    
+
     @ViewBuilder
     func releaseDate(movie: Movie) -> some View {
         NeugelbInfoRow(title: Localizable.release, value: "\(movie.releaseDate)")
     }
-    
+
     @ViewBuilder
     func language(movie: Movie) -> some View {
         if let language = movie.language {
             NeugelbInfoRow(title: Localizable.language, value: language)
         }
     }
-    
+
     @ViewBuilder
     func runtime(movie: Movie) -> some View {
         if let runtime = movie.runtime {
             NeugelbInfoRow(title: Localizable.runtime, value: "\(runtime)")
         }
     }
-    
+
     @ViewBuilder
     func budget(movie: Movie) -> some View {
         if let budget = movie.budget {
             NeugelbInfoRow(title: Localizable.budget, value: "\(budget)")
         }
     }
-    
+
     @ViewBuilder
     func revenue(movie: Movie) -> some View {
         if let revenue = movie.revenue {
             NeugelbInfoRow(title: Localizable.revenue, value: "\(revenue)")
         }
     }
-    
+
     @ViewBuilder
     func adult(movie: Movie) -> some View {
         if let adult = movie.adult {
             NeugelbInfoRow(title: Localizable.adult, value: adult ? Localizable.yes : Localizable.no)
         }
     }
-    
+
 }
 
 // MARK: - Constants
