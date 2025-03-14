@@ -1,7 +1,7 @@
 import UIKit
 
 extension UIView {
-    
+
     typealias ConstraintsMaker = (_ view: UIView, _ superView: UIView) -> [NSLayoutConstraint]
     /// Adds view as subview to given view, sets `translatesAutoresizingMaskIntoConstraints` to `false` and activates constraints returned in `constraintsMaker` closure.
     /// - Parameters:
@@ -12,7 +12,7 @@ extension UIView {
         translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate(constraintsMaker(self, view))
     }
-    
+
     @resultBuilder
     // swiftlint:disable:next convenience_type
     struct ConstraintsBuilder {

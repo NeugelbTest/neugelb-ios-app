@@ -1,7 +1,7 @@
 import UIKit
 import NeugelbUIComponents
 
-//class DefaultImageService: ImageService {
+// class DefaultImageService: ImageService {
 //
 //    func loadImage(from path: String) async -> NeugelbUIComponents.ImageStatus {
 //        
@@ -46,4 +46,4 @@ import NeugelbUIComponents
 //                self.fileManager.saveImage(image: downloadedImage, imageName: imageName, folderName: folderName)
 //            })
 //    }
-//}
+// }

@@ -61,4 +61,3 @@ class NeugelbViewContainerController<Content: View>: NeugelbViewController {
     }
 
 }
-

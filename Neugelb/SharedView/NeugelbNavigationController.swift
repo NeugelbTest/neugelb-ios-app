@@ -112,4 +112,3 @@ extension NeugelbNavigationController: UIGestureRecognizerDelegate {
     }
 
 }
-

@@ -2,21 +2,20 @@ import Foundation
 import UIKit
 
 protocol Coordinator {
-    
+
     var navigationController: UINavigationController { get set }
-    
+
     @MainActor
     func start()
 }
 
 extension Coordinator {
-    
+
     @MainActor
     var topController: UIViewController { get async {
         await topViewController(controller: navigationController)
     }}
-    
-    
+
     @MainActor
     func topViewController(controller: UIViewController) async -> UIViewController {
         if let navigationController = controller as? UINavigationController {
@@ -33,9 +32,8 @@ extension Coordinator {
         }
         return controller
     }
-    
-}
 
+}
 
 // MARK: - UIViewController Extension
 

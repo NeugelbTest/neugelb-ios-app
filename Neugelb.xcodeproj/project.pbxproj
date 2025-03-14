@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C93CAB672D7E4A1000C67BD8 /* NeugelbUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = C93CAB662D7E4A1000C67BD8 /* NeugelbUIComponents */; };
+		C941C8692D84F4D200180723 /* NeugelbLocalized in Frameworks */ = {isa = PBXBuildFile; productRef = C941C8682D84F4D200180723 /* NeugelbLocalized */; };
 		C95826BB2D81DB49005C188F /* NeugelbNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = C95826BA2D81DB49005C188F /* NeugelbNetwork */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C95826BB2D81DB49005C188F /* NeugelbNetwork in Frameworks */,
+				C941C8692D84F4D200180723 /* NeugelbLocalized in Frameworks */,
 				C93CAB672D7E4A1000C67BD8 /* NeugelbUIComponents in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,6 +136,7 @@
 			packageProductDependencies = (
 				C93CAB662D7E4A1000C67BD8 /* NeugelbUIComponents */,
 				C95826BA2D81DB49005C188F /* NeugelbNetwork */,
+				C941C8682D84F4D200180723 /* NeugelbLocalized */,
 			);
 			productName = Neugelb;
 			productReference = C93CAB1B2D7DBFD400C67BD8 /* Neugelb.app */;
@@ -220,6 +223,7 @@
 			packageReferences = (
 				C93CAB652D7E4A1000C67BD8 /* XCRemoteSwiftPackageReference "neugelb-ios-ui-components" */,
 				C95826B92D81DB49005C188F /* XCRemoteSwiftPackageReference "neugelb-ios-network" */,
+				C941C8672D84F4D200180723 /* XCRemoteSwiftPackageReference "neugelb-ios-localized" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = C93CAB1C2D7DBFD400C67BD8 /* Products */;
@@ -588,7 +592,15 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-ui-components";
 			requirement = {
-				branch = feature/addMovieList;
+				branch = main;
+				kind = branch;
+			};
+		};
+		C941C8672D84F4D200180723 /* XCRemoteSwiftPackageReference "neugelb-ios-localized" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-localized";
+			requirement = {
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -596,7 +608,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-network";
 			requirement = {
-				branch = feature/addMovieService;
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -607,6 +619,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C93CAB652D7E4A1000C67BD8 /* XCRemoteSwiftPackageReference "neugelb-ios-ui-components" */;
 			productName = NeugelbUIComponents;
+		};
+		C941C8682D84F4D200180723 /* NeugelbLocalized */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C941C8672D84F4D200180723 /* XCRemoteSwiftPackageReference "neugelb-ios-localized" */;
+			productName = NeugelbLocalized;
 		};
 		C95826BA2D81DB49005C188F /* NeugelbNetwork */ = {
 			isa = XCSwiftPackageProductDependency;
