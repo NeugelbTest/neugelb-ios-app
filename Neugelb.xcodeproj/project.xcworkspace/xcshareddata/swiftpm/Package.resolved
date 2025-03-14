@@ -1,5 +1,5 @@
 {
-  "originHash" : "0e6b9f592d7792ec01b3b1ff9df3d7f06a5d196e20d18819a354c6390180cacd",
+  "originHash" : "551f6fe3174e88515378a1d36063af0b8010f35c98a7be408cb1cf37321de2b4",
   "pins" : [
     {
       "identity" : "neugelb-ios-colors",
@@ -42,8 +42,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NeugelbTest/neugelb-ios-network",
       "state" : {
-        "branch" : "feature/addMovieDetail",
-        "revision" : "06e0142985341c65e974907a3364a0d759b24ce3"
+        "branch" : "main",
+        "revision" : "5dc7e7fe30bd0b2e6e7cff18c86755a0dfc18c13"
       }
     },
     {
@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NeugelbTest/neugelb-ios-ui-components",
       "state" : {
-        "branch" : "feature/addMovieDetail",
-        "revision" : "30b059687566b5b64c7311a82fbfe03987ee0bfe"
+        "branch" : "main",
+        "revision" : "deecb939232820801e6f93f9a7d6743853f3c5ec"
       }
     },
     {

@@ -592,7 +592,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-ui-components";
 			requirement = {
-				branch = feature/addMovieDetail;
+				branch = main;
 				kind = branch;
 			};
 		};
@@ -608,7 +608,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-network";
 			requirement = {
-				branch = feature/addMovieDetail;
+				branch = main;
 				kind = branch;
 			};
 		};
