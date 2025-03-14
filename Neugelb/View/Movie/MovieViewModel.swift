@@ -1,62 +1,61 @@
 import SwiftUI
-//import ARTNetwork
+import NeugelbNetwork
 import NeugelbUIComponents
 
 final class MovieViewModel: ObservableObject {
     
-//    private var repository: ARTRepository
+    private var service: MovieService
     private var coordinator: MovieCoordinator?
-//
-//    @MainActor @Published
-//    var places : [PlacesListItem.Model] = []
-//
-//    init(
-//        repository : ARTRepository,
-//        coordinator: PaintingCoordinator
-//    ) {
-//        self.repository = repository
-//        self.coordinator = coordinator
-//    }
-    init(
-        id : String,
-        coordinator: MovieCoordinator
-    ) {
-        self.coordinator = coordinator
-    }
-//
-//    func getPlaces() async {
-//        guard let allPlaces = try? await repository.fetchLocations() else { return }
-//        Task { @MainActor in
-//            print()
-//            places = allPlaces.map({ getPlacesListItemModel(from: $0) })
-//        }
-//
-//    }
-//
-//    func navigateBack() {
-//        coordinator?.navigate(.back)
-//    }
-//
-//    func goToPlace(id: String) {
-//        coordinator?.navigate(.place(id))
-//    }
+    private var imageService: ImageService
 
+    @MainActor @Published
+    var movie: Movie?
+    
+    @MainActor @Published
+    var cover: ImageStatus = .loading
+    
+    @MainActor @Published
+    var poster: ImageStatus = .loading
+
+    init(
+        service: MovieService,
+        coordinator: MovieCoordinator,
+        imageService: ImageService = NeugelbNetwork.imageService
+    ) {
+        self.service = service
+        self.coordinator = coordinator
+        self.imageService = imageService
+    }
+    
+    func getMovie(id: Int) async {
+        guard let movie = try? await service.fetchMovieDetails(for: id) else { return }
+        Task { @MainActor in
+            self.movie = movie
+            poster = await fetchImage(image: movie.poster)
+            cover = await fetchImage(image: movie.cover)
+        }
+    }
+
+    func navigateBack() {
+        coordinator?.navigate(.back)
+    }
 }
 
 // MARK: - Private Methods
 
 private extension MovieViewModel {
     
-//    func getPlacesListItemModel(from place: Location) -> PlacesListItem.Model {
-//        PlacesListItem.Model.Builder()
-//            .with(id: place.id)
-//            .with(name: place.name)
-//            .with(address: "\(place.country), \(place.city)")
-//            .with(imageUrl: place.image)
-//            .with(imageService: DefaultImageService())
-//            .with(detailButtonActionHandler: { [weak self] id in
-//                self?.goToPlace(id: id)
-//            })
-//            .build()
-//    }
+    func fetchImage(image: String?) async -> ImageStatus {
+        guard let path = image else {
+            return .failed
+        }
+        do {
+            guard let image = try await imageService.fetchImage(from: path) else {
+                return .failed
+            }
+            return .success(image)
+        } catch {
+            return .failed
+        }
+    }
 }
