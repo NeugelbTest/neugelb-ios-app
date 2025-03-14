@@ -34,7 +34,7 @@
       "location" : "https://github.com/NeugelbTest/neugelb-ios-network",
       "state" : {
         "branch" : "feature/addMovieService",
-        "revision" : "bd8b3d4b3c6e50969f055495c3f58165319bc415"
+        "revision" : "b74ad5eefd60c54c8a2c80d7cb83567387e6370c"
       }
     },
     {
@@ -43,7 +43,7 @@
       "location" : "https://github.com/NeugelbTest/neugelb-ios-ui-components",
       "state" : {
         "branch" : "feature/addMovieList",
-        "revision" : "1d9e54cbb0e1c9f0c66776959bec3bf8608bed03"
+        "revision" : "b7815aff95ba604983ade3698fc4cd6fd1a3c481"
       }
     },
     {

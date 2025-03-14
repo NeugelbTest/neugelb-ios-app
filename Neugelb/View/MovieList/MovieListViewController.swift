@@ -5,7 +5,7 @@ import NeugelbColors
 class MovieListViewController: NeugelbViewContainerController<MovieListView> {
     
     override var viewBackgroundColor: UIColor {
-        ColorAsset.grey80.uiColor
+        ColorAsset.grey90.uiColor
     }
     
     private let viewModel: MovieListViewModel

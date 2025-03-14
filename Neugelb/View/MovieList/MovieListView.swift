@@ -2,6 +2,7 @@ import SwiftUI
 import NeugelbFonts
 import NeugelbColors
 import NeugelbUIComponents
+import NeugelbLocalized
 
 struct MovieListView: View {
     
@@ -10,8 +11,8 @@ struct MovieListView: View {
     var body: some View {
         
         NeugelbNavigationListView(
-            title: "Latest Movies",
-            subtitle: "The latest movies sort by favorites",
+            title: Localizable.latestMovies,
+            subtitle: Localizable.latestMoviesDescription,
             backgroundColor: .clear
         ) {
             content
@@ -24,7 +25,6 @@ struct MovieListView: View {
                 .padding(.horizontal, .spacing16)
                 .padding(.bottom, .spacing16)
         }
-
     }
 
 }
