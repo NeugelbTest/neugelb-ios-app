@@ -87,3 +87,13 @@ To simplify navigation, the app implements the **Coordinator Pattern**:
 - **More Unit Tests**: Although high code coverage is not the only measure of reliability, I will ensure that the entire codebase is covered by tests to improve maintainability and prevent regressions.
 - **Performance Optimizations**: Enhance app performance by optimizing network calls, UI rendering, and memory management.
 - **Documentation Improvements**: Add detailed API usage examples and developer guidelines.
+
+         
+## Time Effort
+* **Total time invested**: Approximately 25 hours.
+* **Planning**: Conceptualizing tasks, defining the modular structure, and setting up the project: ~1 hour.
+* **Data Layer**: Implementing API calls, caching strategies, and handling local storage: ~5 hours.
+* **Domain Logic**: Developing business logic, dependency management, and optimizing performance: ~5 hours.
+* **ViewModels & SwiftUI Views**: Designing UI logic, implementing dynamic components, and handling state management: ~10 hours.
+* **Navigation & Coordinator Implementation**: Setting up and managing navigation using the Coordinator pattern: ~2 hours.
+* **Review & Testing**: Refactoring code, fixing bugs, writing unit tests, and documenting: ~2 hour.
