@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C93CAB672D7E4A1000C67BD8 /* NeugelbUIComponents in Frameworks */ = {isa = PBXBuildFile; productRef = C93CAB662D7E4A1000C67BD8 /* NeugelbUIComponents */; };
 		C941C8692D84F4D200180723 /* NeugelbLocalized in Frameworks */ = {isa = PBXBuildFile; productRef = C941C8682D84F4D200180723 /* NeugelbLocalized */; };
+		C941CC002D8633B200180723 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C941CBFF2D8633AC00180723 /* README.md */; };
 		C95826BB2D81DB49005C188F /* NeugelbNetwork in Frameworks */ = {isa = PBXBuildFile; productRef = C95826BA2D81DB49005C188F /* NeugelbNetwork */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		C93CAB1B2D7DBFD400C67BD8 /* Neugelb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Neugelb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93CAB312D7DBFD500C67BD8 /* NeugelbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeugelbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C93CAB3B2D7DBFD500C67BD8 /* NeugelbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NeugelbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C941CBFF2D8633AC00180723 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -97,6 +99,7 @@
 		C93CAB122D7DBFD300C67BD8 = {
 			isa = PBXGroup;
 			children = (
+				C941CBFF2D8633AC00180723 /* README.md */,
 				C93CAB1D2D7DBFD400C67BD8 /* Neugelb */,
 				C93CAB342D7DBFD500C67BD8 /* NeugelbTests */,
 				C93CAB3E2D7DBFD500C67BD8 /* NeugelbUITests */,
@@ -242,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C941CC002D8633B200180723 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
