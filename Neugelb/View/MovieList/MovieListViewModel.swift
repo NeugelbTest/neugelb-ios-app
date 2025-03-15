@@ -11,7 +11,7 @@ final class MovieListViewModel: ObservableObject {
 
     @MainActor @Published
     var movies: [MovieListItem.Model] = []
-    
+
     @MainActor @Published
     private(set) var hasMore: Bool = true
 
@@ -22,17 +22,17 @@ final class MovieListViewModel: ObservableObject {
         self.service = service
         self.coordinator = coordinator
     }
-    
+
     func getMovies() async {
         guard await hasMore, !isLoading else { return }
         isLoading = true
         defer { isLoading = false }
-        
+
         guard let movies = try? await service.fetchMovies(by: currentPage), !movies.isEmpty else {
             Task { @MainActor in self.hasMore = false }
             return
         }
-        
+
         Task { @MainActor in
             self.movies.append(contentsOf: movies.map({ getMovieListItemModel(from: $0) }))
             self.currentPage += 1
