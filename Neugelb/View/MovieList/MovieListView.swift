@@ -20,10 +20,16 @@ struct MovieListView: View {
     }
 
     var content: some View {
-        ForEach(viewModel.movies) { movie in
+        ForEach(viewModel.movies.indices, id: \ .self) { index in
+            let movie = viewModel.movies[index]
             MovieListItem(model: movie)
                 .padding(.horizontal, .spacing16)
                 .padding(.bottom, .spacing16)
+                .onAppear {
+                    if movie.id == viewModel.movies.last?.id {
+                        Task { await viewModel.getMovies() }
+                    }
+                }
         }
     }
 
