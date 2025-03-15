@@ -592,7 +592,7 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/NeugelbTest/neugelb-ios-ui-components";
 			requirement = {
-				branch = feature/addInfinityLoad;
+				branch = main;
 				kind = branch;
 			};
 		};

@@ -51,8 +51,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/NeugelbTest/neugelb-ios-ui-components",
       "state" : {
-        "branch" : "feature/addInfinityLoad",
-        "revision" : "111587090637522d18a0d50db5e02a5c79023788"
+        "branch" : "main",
+        "revision" : "034e18901856ecfc48e2f7fbdcc8fe066b793c50"
       }
     },
     {
