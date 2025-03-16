@@ -1,10 +1,3 @@
-//
-//  NeugelbTests.swift
-//  NeugelbTests
-//
-//  Created by Matt on 09.03.25.
-//
-
 import Testing
 @testable import Neugelb
 
