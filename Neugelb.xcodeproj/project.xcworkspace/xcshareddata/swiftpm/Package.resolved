@@ -25,7 +25,7 @@
       "location" : "https://github.com/NeugelbTest/neugelb-ios-images",
       "state" : {
         "branch" : "main",
-        "revision" : "fe618534741a579273268068a0737c688b7f25a4"
+        "revision" : "10aecba02da9ea82e59ca588dd2998eeba1f94fb"
       }
     },
     {
@@ -34,7 +34,7 @@
       "location" : "https://github.com/NeugelbTest/neugelb-ios-localized",
       "state" : {
         "branch" : "main",
-        "revision" : "519ad3385a040934e3933b850af3f044ffd5075c"
+        "revision" : "c8402762d2ad7abbe2347fbc06b6c5ca9fddba4f"
       }
     },
     {
@@ -52,7 +52,7 @@
       "location" : "https://github.com/NeugelbTest/neugelb-ios-ui-components",
       "state" : {
         "branch" : "main",
-        "revision" : "034e18901856ecfc48e2f7fbdcc8fe066b793c50"
+        "revision" : "c94c0d1b23c455d3520aacf5cae1bd9508021920"
       }
     },
     {
