@@ -8,7 +8,7 @@ This repository contains the main iOS application for Neugelb, developed in Swif
 
 ## Submodules
 
-At Neugelb, we are following a modular approach to app development.
+The Neugelb app follows a modular approach to development.
 
 Below you can find the list of modules used in the Neugelb project. All modules are distributed via SPM.
 
