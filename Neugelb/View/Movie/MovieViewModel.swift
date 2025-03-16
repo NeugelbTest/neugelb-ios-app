@@ -9,7 +9,7 @@ final class MovieViewModel: ObservableObject {
     private var imageService: ImageService
 
     @MainActor @Published
-    var movie: Movie?
+    var movie: NeugelbViewStatus<Movie> = .loading
 
     @MainActor @Published
     var cover: ImageStatus = .loading
@@ -30,7 +30,7 @@ final class MovieViewModel: ObservableObject {
     func getMovie(id: Int) async {
         guard let movie = try? await service.fetchMovieDetails(for: id) else { return }
         Task { @MainActor in
-            self.movie = movie
+            self.movie = .success(movie)
             poster = await fetchImage(image: movie.poster)
             cover = await fetchImage(image: movie.cover)
         }

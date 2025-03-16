@@ -10,38 +10,61 @@ struct MovieView: View {
     @ObservedObject var viewModel: MovieViewModel
 
     var body: some View {
-        NeugelbNavigationScrollView(
-            title: Localizable.movieInformation,
-            backgroundColor: .clear,
-            backButtonStyle: .back,
-            backButtonAction: {
-                viewModel.navigateBack()
+        switch viewModel.movie {
+        case .success(let movie):
+            NeugelbNavigationScrollView(
+                title: Localizable.movieInformation,
+                backgroundColor: .clear,
+                backButtonStyle: .back,
+                backButtonAction: {
+                    viewModel.navigateBack()
+                }
+            ) {
+                content(movie: movie)
             }
-        ) {
-            content
+        case .loading:
+            NeugelbNavigationScrollView(
+                title: Localizable.movieInformation,
+                backgroundColor: .clear,
+                backButtonStyle: .back,
+                backButtonAction: {
+                    viewModel.navigateBack()
+                }
+            ) {
+                NeugelbLoadingView()
+            }
+        case .failed:
+            NeugelbNavigationScrollView(
+                title: Localizable.movieInformation,
+                backgroundColor: .clear,
+                backButtonStyle: .back,
+                backButtonAction: {
+                    viewModel.navigateBack()
+                }
+            ) {
+                NeugelbErrorView(error: Localizable.errorMessage)
+            }
         }
     }
 
-    var content: some View {
+    func content(movie: Movie) -> some View {
         VStack {
-            header
-            if let movie = viewModel.movie {
-                quickInformation(movie: movie)
-                overview
-                status(movie: movie)
-                rating(movie: movie)
-                releaseDate(movie: movie)
-                language(movie: movie)
-                runtime(movie: movie)
-                budget(movie: movie)
-                revenue(movie: movie)
-                adult(movie: movie)
-            }
+            header(movie: movie)
+            quickInformation(movie: movie)
+            overview(movie: movie)
+            status(movie: movie)
+            rating(movie: movie)
+            releaseDate(movie: movie)
+            language(movie: movie)
+            runtime(movie: movie)
+            budget(movie: movie)
+            revenue(movie: movie)
+            adult(movie: movie)
         }
 
     }
 
-    var header: some View {
+    func header(movie: Movie) -> some View {
         NeugelbImageView(image: $viewModel.cover)
             .fillWidth()
             .frame(height: Constant.headerHeight)
@@ -58,7 +81,7 @@ struct MovieView: View {
                         .cornerRadius(16)
 
                     NeugelbText(
-                        text: viewModel.movie?.title ?? Localizable.untitle,
+                        text: movie.title,
                         weight: .semibold,
                         size: 20,
                         textColor: .grey10
@@ -70,22 +93,18 @@ struct MovieView: View {
                 .padding(.horizontal, .spacing16),
                 alignment: .bottom
             )
-
     }
 
-    @ViewBuilder
-    var overview: some View {
-        if let overview = viewModel.movie?.overview {
-            NeugelbText(
-                text: overview,
-                weight: .regular,
-                size: 14,
-                textColor: .grey20,
-                alignment: .leading
-            )
-            .padding(.horizontal, .spacing16)
-            .padding(.top, .spacing16)
-        }
+    func overview(movie: Movie) -> some View {
+        NeugelbText(
+            text: movie.overview,
+            weight: .regular,
+            size: 14,
+            textColor: .grey20,
+            alignment: .leading
+        )
+        .padding(.horizontal, .spacing16)
+        .padding(.top, .spacing16)
     }
 
     func quickInformation(movie: Movie) -> some View {

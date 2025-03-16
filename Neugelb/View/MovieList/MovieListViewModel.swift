@@ -10,10 +10,12 @@ final class MovieListViewModel: ObservableObject {
     private var isLoading = false
 
     @MainActor @Published
-    var movies: [MovieListItem.Model] = []
+    var movies: NeugelbViewStatus<[MovieListItem.Model]> = .loading
 
     @MainActor @Published
     private(set) var hasMore: Bool = true
+
+    private var currentMovies: [MovieListItem.Model] = []
 
     init(
         service: MovieService,
@@ -34,7 +36,8 @@ final class MovieListViewModel: ObservableObject {
         }
 
         Task { @MainActor in
-            self.movies.append(contentsOf: movies.map({ getMovieListItemModel(from: $0) }))
+            self.currentMovies.append(contentsOf: movies.map({ getMovieListItemModel(from: $0) }))
+            self.movies = .success(currentMovies)
             self.currentPage += 1
         }
     }
