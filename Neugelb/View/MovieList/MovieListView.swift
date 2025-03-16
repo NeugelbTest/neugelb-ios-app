@@ -36,7 +36,6 @@ struct MovieListView: View {
             }
         }
 
-        
     }
 
     func content(movies: [MovieListItem.Model]) -> some View {

@@ -14,7 +14,7 @@ final class MovieListViewModel: ObservableObject {
 
     @MainActor @Published
     private(set) var hasMore: Bool = true
-    
+
     private var currentMovies: [MovieListItem.Model] = []
 
     init(
